@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "classnames": "^2.5.1",
-    "react-bootstrap": "^2.10.6"
+    "react-bootstrap": "^2.10.6",
+    "@rollup/rollup-linux-x64-gnu": "4.22.4"
   }
 }

@@ -1,0 +1,1 @@
+export * from './first'; //neuvadim priponu, mezi js a jsx je ten rozdil, ze jsx je reactovy
