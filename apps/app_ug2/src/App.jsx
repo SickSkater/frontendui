@@ -5,18 +5,20 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 //^musi byt zakomentovany aby se zobrazil hello world
 
 import { AppCanvas } from '@hrbolek/uoisfrontend-gql-shared';
-import { FirstEntity } from '../../../packages/candidate_page'; //import z package
-import { SecondEntity } from '../../../packages/candidate_page/src/first';
+//import { FirstEntity } from '../../../packages/candidate_page'; //import z package
+//import { SecondEntity } from '../../../packages/candidate_page/src/first';
+import { AppRouter } from './AppRouter';
 
 export const App = () => {
     return (
         <AppCanvas>
-            <FirstEntity/>
-            <SecondEntity/>
+            <AppRouter/>
         </AppCanvas>
     )
 }
 
+//^takto by mela vypadat finalni verze aplikace, menit se bude jen router kde budu urls prirazovat komponenty ktere je maji obsluhovat
+//UZ SE TO NEBUDE MENIT
 
 
 
