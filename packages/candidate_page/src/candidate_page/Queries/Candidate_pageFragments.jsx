@@ -1,8 +1,10 @@
 import { createQueryStrLazy } from "@hrbolek/uoisfrontend-gql-shared"
 
-export const Candidate_pageLinkFragment = createQueryStrLazy(
+
+//v linku byva typename, id a name
+export const ProgramLinkFragment = createQueryStrLazy(
 `
-fragment Candidate_pageLink on Candidate_pageGQLModel {
+fragment Candidate_pageLink on ProgramGQLModel {
   __typename
   id
   lastchange
@@ -11,18 +13,20 @@ fragment Candidate_pageLink on Candidate_pageGQLModel {
 }
 `)
 
-
-export const Candidate_pageMediumFragment = createQueryStrLazy(
+//u medium by mely byt vsechny elementarni atributy
+export const ProgramMediumFragment = createQueryStrLazy(
 `
-fragment Candidate_pageMedium on Candidate_pageGQLModel {
+fragment Candidate_pageMedium on ProgramGQLModel {
   ...Candidate_pageLink
 }
-`, Candidate_pageLinkFragment)
+`, ProgramLinkFragment)
 
-export const Candidate_pageLargeFragment = createQueryStrLazy(
+
+//large obsahuje vsechny atributy
+export const ProgramLargeFragment = createQueryStrLazy(
 `
-fragment Candidate_pageLarge on Candidate_pageGQLModel {
+fragment Candidate_pageLarge on ProgramGQLModel {
   ...Candidate_pageMedium
 }
-`, Candidate_pageMediumFragment)
+`, ProgramMediumFragment)
   

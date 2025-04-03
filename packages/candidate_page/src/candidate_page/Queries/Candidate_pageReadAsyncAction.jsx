@@ -1,15 +1,15 @@
 import { createAsyncGraphQLAction, createQueryStrLazy } from "@hrbolek/uoisfrontend-gql-shared";
-import { Candidate_pageLargeFragment } from "./Candidate_pageFragments";
+import { ProgramLargeFragment } from "./Candidate_pageFragments";
 
 const Candidate_pageReadQuery = createQueryStrLazy(
 `
 query Candidate_pageReadQuery($id: UUID!) {
-  result: candidate_pageById(id: $id) {
+  result: programById(id: $id) {
     ...Candidate_pageLarge
   }
 }
 `, 
-    Candidate_pageLargeFragment)
+ProgramLargeFragment)
 
     /**
  * An async action for executing a GraphQL query to read candidate_page entities.

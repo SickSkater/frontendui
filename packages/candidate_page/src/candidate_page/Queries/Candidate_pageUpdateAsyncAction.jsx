@@ -1,5 +1,5 @@
 import { createAsyncGraphQLAction, createQueryStrLazy } from "@hrbolek/uoisfrontend-gql-shared";
-import { Candidate_pageLargeFragment } from "./Candidate_pageFragments";
+import { ProgramMediumFragment } from "./Candidate_pageFragments";
 
 const Candidate_pageUpdateMutation = createQueryStrLazy(
 `
@@ -18,6 +18,6 @@ mutation Candidate_pageUpdateMutation($id: UUID!, $lastchange: DateTime!, $name:
     ...Candidate_pageLarge
   }
 }
-`, Candidate_pageLargeFragment)
+`, ProgramMediumFragment)
 
 export const Candidate_pageUpdateAsyncAction = createAsyncGraphQLAction(Candidate_pageUpdateMutation)

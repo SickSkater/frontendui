@@ -104,6 +104,6 @@ export const Candidate_pagePage = () => {
 
     //zde pripojim page k routeru
 
-    return <div>Hello world {id}</div>
-    //return <ProgramPageContentLazy candidate_page={candidate_page} />
+    //return <div>Hello world {id}</div>
+    return <Candidate_pagePageContentLazy candidate_page={candidate_page} />
 }
