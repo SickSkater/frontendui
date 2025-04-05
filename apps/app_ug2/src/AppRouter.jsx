@@ -8,6 +8,7 @@ import { UserPage } from "../../../packages/@blacki005/candidate_page/src/User/P
   
 // import { UserRouterSegment } from "@hrbolek/uoisfrontend-ug2";
 
+//co stranka, to jeden dictionary, tech stranek budeme mit vice:
 export const Routes = [
     // UserRouterSegment
     {
