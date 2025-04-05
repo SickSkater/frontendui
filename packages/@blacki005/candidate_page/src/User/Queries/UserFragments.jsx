@@ -15,6 +15,7 @@ export const UserMediumFragment = createQueryStrLazy(
 `
 fragment UserMedium on UserGQLModel {
   ...UserLink
+  name
 }
 `, UserLinkFragment)
 
@@ -22,6 +23,9 @@ export const UserLargeFragment = createQueryStrLazy(
 `
 fragment UserLarge on UserGQLModel {
   ...UserMedium
+  id
+  name
+  surname
 }
 `, UserMediumFragment)
   

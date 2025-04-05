@@ -1,6 +1,0 @@
-export * from './Candidate_pageInsertAsyncAction'
-export * from './Candidate_pageReadAsyncAction'
-export * from './Candidate_pageReadPageAsyncAction'
-export * from './Candidate_pageUpdateAsyncAction'
-export * from './Candidate_pageDeleteAsyncAction'
-export * from './Candidate_pageFragments'
