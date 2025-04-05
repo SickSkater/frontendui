@@ -1,9 +1,10 @@
 
-import { ProgramPage, ProgramRouterSegment, SubjectRouterSegment } from "@hrbolek/uoisfrontend-zp";
+import { ProgramPage, ProgramRouterSegment, SubjectRouterSegment, UserRouterSegment} from "@blacki005/candidate_page";
 import {
       createBrowserRouter,
       RouterProvider
 } from "react-router-dom";
+import { UserPage } from "../../../packages/@blacki005/candidate_page/src/User/Pages/UserPage";
   
 // import { UserRouterSegment } from "@hrbolek/uoisfrontend-ug2";
 
@@ -13,8 +14,13 @@ export const Routes = [
         path: "/hello/:id",
         element: <ProgramPage />
     },
+    {
+        path: "/user/:id",
+        element: <UserPage/>
+    },
     ProgramRouterSegment,
-    SubjectRouterSegment
+    SubjectRouterSegment,
+    UserRouterSegment
 ]
 
 // const router = createBrowserRouter(Routes, {basename: "/ug"});
