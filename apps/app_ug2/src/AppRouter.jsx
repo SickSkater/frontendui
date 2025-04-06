@@ -5,6 +5,7 @@ import {
       RouterProvider
 } from "react-router-dom";
 import { UserPage } from "../../../packages/@blacki005/candidate_page/src/User/Pages/UserPage";
+import { PaymentInfoPage, PaymentInfoRouterSegment } from "../../../packages/@blacki005/candidate_page/src";
   
 // import { UserRouterSegment } from "@hrbolek/uoisfrontend-ug2";
 
@@ -12,16 +13,21 @@ import { UserPage } from "../../../packages/@blacki005/candidate_page/src/User/P
 export const Routes = [
     // UserRouterSegment
     {
-        path: "/hello/:id",
+        path: "/program/:id",
         element: <ProgramPage />
     },
     {
         path: "/user/:id",
         element: <UserPage/>
     },
+    {
+        path: "/paymentinfo/:id",
+        element: <PaymentInfoPage />
+    },
     ProgramRouterSegment,
     SubjectRouterSegment,
-    UserRouterSegment
+    UserRouterSegment,
+    PaymentInfoRouterSegment
 ]
 
 // const router = createBrowserRouter(Routes, {basename: "/ug"});

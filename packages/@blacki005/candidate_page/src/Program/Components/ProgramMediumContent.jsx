@@ -24,10 +24,9 @@
 export const ProgramMediumContent = ({program, children}) => {
     return (
         <>
-            NEGR {program.name} <br />
+            {program.name} <br />
             ProgramMediumContent <br />
             {JSON.stringify(program)}
-            {program.name}
             {children}
         </>
     )

@@ -1,3 +1,6 @@
+import { UserButton } from "./UserCUDButton"
+import { UserLink } from "./UserLink"
+
 /**
  * A component that displays medium-level content for an user entity.
  *
@@ -27,6 +30,9 @@ export const UserMediumContent = ({user, children}) => {
             {/* UserMediumContent <br /> */}
             {/* {JSON.stringify(user)} */}
             {/* {children} */}
+            {user.name} {user.surname}
+            <UserLink user={user}/>
+            
         </>
     )
 }

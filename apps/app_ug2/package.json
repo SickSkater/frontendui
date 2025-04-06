@@ -16,7 +16,7 @@
     "@hrbolek/uoisfrontend-requests": "*",
     "@hrbolek/uoisfrontend-shared": "*",
     "@hrbolek/uoisfrontend-ug": "*",
-    "@blacki005/candidate_page": "*",
+    "@blacki005/candidate_page": "packages/@blacki005/candidate_page",
     "@popperjs/core": "^2.11.8",
     "bootstrap": "^5.3.3",
     "react": "^18.3.1",
