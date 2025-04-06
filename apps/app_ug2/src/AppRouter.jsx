@@ -5,7 +5,7 @@ import {
       RouterProvider
 } from "react-router-dom";
 import { UserPage } from "../../../packages/@blacki005/candidate_page/src/User/Pages/UserPage";
-import { PaymentInfoPage, PaymentInfoRouterSegment } from "../../../packages/@blacki005/candidate_page/src";
+import { PaymentInfoPage, PaymentInfoRouterSegment } from "../../../packages/@blacki005/candidate_page/src/PaymentInfo/";
   
 // import { UserRouterSegment } from "@hrbolek/uoisfrontend-ug2";
 
@@ -14,7 +14,7 @@ export const Routes = [
     // UserRouterSegment
     {
         path: "/program/:id",
-        element: <ProgramPage />
+        element: <ProgramPage/>
     },
     {
         path: "/user/:id",
@@ -22,7 +22,7 @@ export const Routes = [
     },
     {
         path: "/paymentinfo/:id",
-        element: <PaymentInfoPage />
+        element: <PaymentInfoPage/>
     },
     ProgramRouterSegment,
     SubjectRouterSegment,

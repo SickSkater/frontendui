@@ -26,8 +26,17 @@ fragment UserLarge on UserGQLModel {
   name
   surname
   studies {
-    id
-    
+    payments {
+      paymentInfo {
+        amount
+        admission {
+          id
+          program {
+            name
+          }
+        }
+      }
+    }
   }
 }
 `, UserMediumFragment)

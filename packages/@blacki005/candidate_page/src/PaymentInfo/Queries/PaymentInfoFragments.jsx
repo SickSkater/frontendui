@@ -20,6 +20,10 @@ export const PaymentInfoLargeFragment = createQueryStrLazy(
 `
 fragment PaymentInfoLarge on PaymentInfoGQLModel {
   ...PaymentInfoMedium
+  admission {
+    __typename
+    id
+  }
 }
 `, PaymentInfoMediumFragment)
   

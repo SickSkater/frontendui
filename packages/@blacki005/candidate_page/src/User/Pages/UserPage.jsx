@@ -3,7 +3,7 @@ import { useParams } from "react-router"
 
 import { CreateDelayer, ErrorHandler, LoadingSpinner } from "@hrbolek/uoisfrontend-shared"
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
-import { UserLargeCard } from "../Components"
+import { UserLargeCard, UserMediumCard } from "../Components"
 import { UserReadAsyncAction, UserReadPageAsyncAction } from "../Queries"
 import { UserPageNavbar } from "./UserPageNavbar"
 
@@ -31,7 +31,12 @@ const UserPageContent = ({user}) => {
     return (<>
         <UserPageNavbar user={user} />
         <UserLargeCard user={user}>
-        User JSON <pre>{JSON.stringify(user, null, 2)}</pre> <br />
+            Zde informace u uchazeci <br />
+            <pre>{JSON.stringify(user, null, 2)}</pre> <br />
+
+
+            
+            Podane prihlasky:
         </UserLargeCard>
     </>)
 }

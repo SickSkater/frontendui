@@ -6,6 +6,7 @@ import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
 import { PaymentInfoLargeCard } from "../Components"
 import { PaymentInfoReadAsyncAction } from "../Queries"
 import { PaymentInfoPageNavbar } from "./PaymentInfoPageNavbar"
+import {PaymentInfoAdmissionAttribute} from "../Scalars/PaymentInfoAdmissionAttribute"
 
 /**
  * A page content component for displaying detailed information about an paymentinfo entity.
@@ -32,6 +33,9 @@ const PaymentInfoPageContent = ({paymentinfo}) => {
         <PaymentInfoPageNavbar paymentinfo={paymentinfo} />
         <PaymentInfoLargeCard paymentinfo={paymentinfo}>
             PaymentInfo {JSON.stringify(paymentinfo)}
+        </PaymentInfoLargeCard>
+        <PaymentInfoLargeCard paymentinfo={paymentinfo}>
+            <PaymentInfoAdmissionAttribute paymentinfo={paymentinfo} />
         </PaymentInfoLargeCard>
     </>)
 }
