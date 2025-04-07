@@ -3,10 +3,12 @@ import { useParams } from "react-router"
 
 import { CreateDelayer, ErrorHandler, LoadingSpinner } from "@hrbolek/uoisfrontend-shared"
 import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
-import { UserLargeCard, UserMediumCard } from "../Components"
-import { UserReadAsyncAction, UserReadPageAsyncAction } from "../Queries"
+import { UserLargeCard } from "../Components"
+import { UserReadAsyncAction } from "../Queries"
 import { UserPageNavbar } from "./UserPageNavbar"
-
+import { UserPaymentInfoAttribute } from "../Scalars/UserPaymentInfoAttribute"
+import { UserAdmissionAttribute } from "../Scalars/UserAdmissionAttribute"
+import { UserPaymentsAttribute } from "../Vectors/UserPaymentsAttribute"
 /**
  * A page content component for displaying detailed information about an user entity.
  *
@@ -27,16 +29,87 @@ import { UserPageNavbar } from "./UserPageNavbar"
  * 
  * <UserPageContent user={userEntity} />
  */
+
+var tmp_user_data = {
+    "__typename": "UserGQLModel",
+    "id": "123e4567-e89b-12d3-a456-426614174000",
+    "name": "John",
+    "surname": "Bui",
+    "studies": [
+        {
+        "payments": [
+            {
+            "paymentInfo": {
+                "amount": 700,
+                "admission": {
+                "applicationStartDate": "2025-01-01",
+                "applicationLastDate": "2025-01-31",
+                "endDate": "2025-06-30",
+                "conditionDate": "2025-01-10",
+                "paymentDate": "2025-02-01",
+                "examStartDate": "2025-05-01",
+                "examLastDate": "2025-05-15",
+                "studentEntryDate": "2025-02-01",
+                "program": {
+                    "name": "Kybernetická bezpečnost"
+                },
+                "paymentInfo": {
+                    "amount": 700,
+                    "accountNumber": "1234567890",
+                    "specificSymbol": "AB123",
+                    "constantSymbol": "XYZ987",
+                    "IBAN": "GB29NWBK60161331926819",
+                    "SWIFT": "NWBKGB2L"
+                }
+                }
+            },
+            "paymentInfo": {
+                "amount": 600,
+                "admission": {
+                "applicationStartDate": "2025-01-01",
+                "applicationLastDate": "2025-01-31",
+                "endDate": "2025-06-30",
+                "conditionDate": "2025-01-10",
+                "paymentDate": "2025-02-01",
+                "examStartDate": "2025-05-01",
+                "examLastDate": "2025-05-15",
+                "studentEntryDate": "2025-02-01",
+                "program": {
+                    "name": "Vojenske technologie strojni"
+                },
+                "paymentInfo": {
+                    "amount": 600,
+                    "accountNumber": "1234567890",
+                    "specificSymbol": "AB123",
+                    "constantSymbol": "XYZ987",
+                    "IBAN": "GB29NWBK60161331926819",
+                    "SWIFT": "NWBKGB2L"
+                }
+                }
+            }
+            }
+        ],
+        "evaluations": [
+            {
+            "points": 95,
+            "grade": "A",
+            "description": "Uslo to no.",
+            "passed": true
+            }
+        ]
+        }
+    ]
+    }
+
+
 const UserPageContent = ({user}) => {
     return (<>
         <UserPageNavbar user={user} />
         <UserLargeCard user={user}>
-            Zde informace u uchazeci <br />
-            <pre>{JSON.stringify(user, null, 2)}</pre> <br />
-
-
-            
-            Podane prihlasky:
+            User {JSON.stringify(user)}
+            <UserPaymentsAttribute student={tmp_user_data.studies[0]}/>
+            <UserPaymentInfoAttribute paymentinfo={tmp_user_data.studies[0].payments[0].paymentInfo}/>
+            <UserAdmissionAttribute user_admission={tmp_user_data.studies[0].payments[0].paymentInfo.admission}/>
         </UserLargeCard>
     </>)
 }

@@ -28,14 +28,16 @@ import {PaymentInfoAdmissionAttribute} from "../Scalars/PaymentInfoAdmissionAttr
  * 
  * <PaymentInfoPageContent paymentinfo={paymentinfoEntity} />
  */
+
+
+
 const PaymentInfoPageContent = ({paymentinfo}) => {
     return (<>
         <PaymentInfoPageNavbar paymentinfo={paymentinfo} />
-        <PaymentInfoLargeCard paymentinfo={paymentinfo}>
+        <PaymentInfoLargeCard className = {styles.payment_info_content}  paymentinfo={paymentinfo}>
             PaymentInfo {JSON.stringify(paymentinfo)}
-        </PaymentInfoLargeCard>
-        <PaymentInfoLargeCard paymentinfo={paymentinfo}>
-            <PaymentInfoAdmissionAttribute paymentinfo={paymentinfo} />
+            <br/>IBAN je: {paymentinfo.IBAN}<br/>
+            <PaymentInfoAdmissionAttribute  paymentinfo={paymentinfo} />
         </PaymentInfoLargeCard>
     </>)
 }

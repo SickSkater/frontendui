@@ -16,7 +16,7 @@ import { PaymentInfoMediumContent } from "./PaymentInfoMediumContent"
  * @param {Object} props.paymentinfo - The object representing the paymentinfo entity.
  * @param {string|number} props.paymentinfo.id - The unique identifier for the paymentinfo entity.
  * @param {string} props.paymentinfo.name - The name or label of the paymentinfo entity.
- * @param {React.ReactNode} [props.children=null] - Additional content to render inside the card body.
+ * @param {React.ReactNode} [props.children = null ] - Additional content to render inside the card body.
  *
  * @returns {JSX.Element} A JSX element combining a card with a title and detailed content.
  *
@@ -28,12 +28,15 @@ import { PaymentInfoMediumContent } from "./PaymentInfoMediumContent"
  *   <p>Additional details or actions for the entity.</p>
  * </PaymentInfoMediumCard>
  */
+
+
 export const PaymentInfoMediumCard = ({paymentinfo, children}) => {
     return (
-        <PaymentInfoCardCapsule title={<><PersonFill /> <PaymentInfoLink paymentinfo={paymentinfo} /></>}>
-            <PaymentInfoMediumContent paymentinfo={paymentinfo}>
-                {children}
+        <PaymentInfoCardCapsule title={<>Platební údaje</>}>
+            <PaymentInfoMediumContent  paymentinfo={paymentinfo}>
             </PaymentInfoMediumContent>
         </PaymentInfoCardCapsule>
     )
 }
+
+

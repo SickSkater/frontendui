@@ -29,10 +29,16 @@ import { PaymentInfoLink } from "./PaymentInfoLink"
  *   <Button variant="primary">Click Me</Button>
  * </PaymentInfoCardCapsule>
  */
+
+import styles from "/home/filip/unob/4_semestr/informatika/projekt/frontendui/style.module.css"
 export const PaymentInfoCardCapsule = ({paymentinfo, children, title=<><PersonFill /> <PaymentInfoLink paymentinfo={paymentinfo} /></>}) => {
     return (
-        <CardCapsule title={title}>
+        <div className={styles.payment_info_content}>
+
+   
+        <CardCapsule  title={title}>
             {children}
         </CardCapsule>
+        </div>
     )
 }
