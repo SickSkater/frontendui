@@ -47,8 +47,7 @@ export default defineConfig({
       "@hrbolek/uoisfrontend-granting": path.resolve(__dirname, "../../packages/granting/src"),
       "@hrbolek/uoisfrontend-admissions": path.resolve(__dirname, "../../packages/admissions/src"),
       "@hrbolek/uoisfrontend-requests": path.resolve(__dirname, "../../packages/requests/src"),
-      
-      "@hrbolek/uoisfrontend-zp": path.resolve(__dirname, "../../packages/z_pack/src"),
+      "@blacki005/candidate_page": path.resolve(__dirname, "../../packages/@blacki005\/candidate_page/src"),
     },
   },
 
@@ -89,7 +88,7 @@ export default defineConfig({
         '!../../packages/admissions/**',
         '!../../packages/requests/**',
         
-        '!../../packages/z_pack/**',
+        '!../../packages/@blacki005/candidate_page/**',
       ],
     },
     hmr: {
