@@ -21,21 +21,20 @@
  *   <p>Additional information about the entity.</p>
  * </PaymentInfoMediumContent>
  */
-
-
-
-export const PaymentInfoMediumContent = (paymentinfo) => {
-    const PaymentInfo = paymentinfo.paymentinfo.admission.paymentInfo
+export const PaymentInfoMediumContent = ({paymentinfo}) => {
     return (
-        < >
-            <div >
-                Zaplacená částka:  {PaymentInfo.amount} Kč<br />
-                Číslo účtu: {PaymentInfo.accountNumber}<br />
-                Variabilní symbol: {PaymentInfo.specificSymbol}<br />
-                Konstantní symbol: {PaymentInfo.constantSymbol}<br />
-                IBAN: {PaymentInfo.IBAN}<br />
-                SWIFT: {PaymentInfo.SWIFT}<br />
-            </div>
+        <>
+            Částka: {paymentinfo.amount}
+            <br />
+            Číslo účtu: {paymentinfo.accountNumber}
+            <br/>
+            variabilní symbol: {paymentinfo.specificSymbol}
+            <br/>
+            konstantní symbol: {paymentinfo.constantSymbol}
+            <br/>
+            IBAN: {paymentinfo.IBAN}
+            <br/>
+            SWIFT: {paymentinfo.SWIFT}
         </>
     )
 }

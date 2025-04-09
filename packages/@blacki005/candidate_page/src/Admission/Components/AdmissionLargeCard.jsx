@@ -27,15 +27,18 @@ import { AdmissionMediumCard } from "./AdmissionMediumCard"
  *   <p>Additional content for the middle column.</p>
  * </AdmissionLargeCard>
  */
+
+
 export const AdmissionLargeCard = ({admission, children}) => {
+
     return (
         <AdmissionCardCapsule admission={admission} >
             <Row>
                 <LeftColumn>
-                    <AdmissionMediumCard admission={admission}/>
+                    místo pro buttony pro další srandy
                 </LeftColumn>
                 <MiddleColumn>
-                    {children}
+                <AdmissionMediumCard admission={admission}/>
                 </MiddleColumn>
             </Row>
         </AdmissionCardCapsule>

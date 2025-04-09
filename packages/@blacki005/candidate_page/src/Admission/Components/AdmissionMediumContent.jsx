@@ -24,9 +24,28 @@
 export const AdmissionMediumContent = ({admission, children}) => {
     return (
         <>
-            AdmissionMediumContent <br />
-            {JSON.stringify(admission)}
-            {children}
+            Datum zahájení podávání přihlášek: {admission.applicationStartDate}
+            <br />
+            Datum ukončení podávání přihlášek: {admission.applicationLastDate}
+            <br/>
+            Datum splnění podmínek: {admission.conditionDate}
+            <br/>
+            Datum platby: {admission.paymentDate}
+            <br/>
+            Datum nástupu do studia: {admission.studentEntryDate}
+            <br/>
+            Datum zahájení zkoušek: {admission.examStartDate}
+            <br/>
+            Datum ukončení zkoušek: {admission.examLastDate}
+            <br/>
+            Datum ukončení programu: {admission.endDate}
+            <br/>
+            Studijní program: {admission.program.name}
+            <br/>
+            Vytvořeno: {admission.createdBy[0]}
+            
+
+            
         </>
     )
 }

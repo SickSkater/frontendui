@@ -1,3 +1,7 @@
+import { AdmissionLink } from "../../Admission"
+import { UserButton } from "./UserCUDButton"
+import { UserLink } from "./UserLink"
+
 /**
  * A component that displays medium-level content for an user entity.
  *
@@ -21,12 +25,27 @@
  *   <p>Additional information about the entity.</p>
  * </UserMediumContent>
  */
+
+
+import { UserStudentsAttribute } from "../Vectors/UserStudentsAttribute"
+import { temp_data } from "../Pages/UserPage"
+
 export const UserMediumContent = ({user, children}) => {
     return (
         <>
-            UserMediumContent <br />
-            {JSON.stringify(user)}
-            {children}
+        <div>
+            Jméno: {user.name}
+            <br />
+            Příjmení: {user.surname}
+            <br />
+            ID: {user.id}
+            <br />
+            Studuje: {user.study} { user.study == null ? "Prázdné" : user.study}
+            <br />
+            Prihlasky:
+            {/* {JSON.stringify(temp_data.studies)} */}
+            <UserStudentsAttribute studies={temp_data.studies}/>
+        </div>     
         </>
     )
 }

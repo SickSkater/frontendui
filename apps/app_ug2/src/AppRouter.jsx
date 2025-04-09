@@ -1,5 +1,5 @@
 
-import { ProgramPage, ProgramRouterSegment, SubjectRouterSegment, UserRouterSegment} from "@blacki005/candidate_page";
+import { UserRouterSegment} from "@blacki005/candidate_page";
 import {
       createBrowserRouter,
       RouterProvider
@@ -13,10 +13,6 @@ import { PaymentInfoPage, PaymentInfoRouterSegment } from "../../../packages/@bl
 export const Routes = [
     // UserRouterSegment
     {
-        path: "/program/:id",
-        element: <ProgramPage/>
-    },
-    {
         path: "/user/:id",
         element: <UserPage/>
     },
@@ -24,8 +20,6 @@ export const Routes = [
         path: "/paymentinfo/:id",
         element: <PaymentInfoPage/>
     },
-    ProgramRouterSegment,
-    SubjectRouterSegment,
     UserRouterSegment,
     PaymentInfoRouterSegment
 ]

@@ -2,6 +2,8 @@ import Row from "react-bootstrap/Row"
 import { LeftColumn, MiddleColumn } from "@hrbolek/uoisfrontend-shared"
 import { UserCardCapsule } from "./UserCardCapsule"
 import { UserMediumCard } from "./UserMediumCard"
+import { UserPaymentInfoAttribute } from "../Scalars/UserPaymentInfoAttribute"
+import { UserAdmissionAttribute } from "../Scalars/UserAdmissionAttribute"
 
 /**
  * A large card component for displaying detailed content and layout for an user entity.
@@ -27,16 +29,19 @@ import { UserMediumCard } from "./UserMediumCard"
  *   <p>Additional content for the middle column.</p>
  * </UserLargeCard>
  */
+
+
 export const UserLargeCard = ({user, children}) => {
     return (
         <UserCardCapsule user={user} >
             <Row>
                 <LeftColumn>
-                    <UserMediumCard user={user}/>
+                    zde budou buttony pro další srandy
                 </LeftColumn>
                 <MiddleColumn>
-                    {children}
+                <UserMediumCard user={user}/>
                 </MiddleColumn>
+
             </Row>
         </UserCardCapsule>
     )

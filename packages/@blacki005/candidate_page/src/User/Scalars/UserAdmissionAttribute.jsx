@@ -18,14 +18,13 @@
  *
  * <UserAdmissionAttribute user={userEntity} />
  */
-import { AdmissionMediumCard } from "../../Admission/Components/AdmissionMediumCard"
 
-export const UserAdmissionAttribute = ({user_admission}) => {
-    const admission = {user_admission}
-    // if (typeof admission === 'undefined') return null
+import { AdmissionMediumContent } from "../../Admission"
+export const UserAdmissionAttribute = ({admission}) => {
+    const Admission = admission
     return (
         <>
-            <AdmissionMediumCard admission={admission} />
+        <AdmissionMediumContent admission={Admission} />
         </>
     )
 }

@@ -20,7 +20,6 @@ export const PaymentInfoLargeFragment = createQueryStrLazy(
 `
 fragment PaymentInfoLarge on PaymentInfoGQLModel {
   ...PaymentInfoMedium
-  IBAN
   admission {
     __typename
     id

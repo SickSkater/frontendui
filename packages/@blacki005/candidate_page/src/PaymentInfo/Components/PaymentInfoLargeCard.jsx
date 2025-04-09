@@ -32,9 +32,10 @@ export const PaymentInfoLargeCard = ({paymentinfo, children}) => {
         <PaymentInfoCardCapsule paymentinfo={paymentinfo} >
             <Row>
                 <LeftColumn>
-                    <PaymentInfoMediumCard paymentinfo={paymentinfo}/>
+                    zde budou buttony pro další srandy
                 </LeftColumn>
                 <MiddleColumn>
+                <PaymentInfoMediumCard paymentinfo={paymentinfo}/>
                     {children}
                 </MiddleColumn>
             </Row>

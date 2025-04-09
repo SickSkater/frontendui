@@ -29,17 +29,28 @@ import {PaymentInfoAdmissionAttribute} from "../Scalars/PaymentInfoAdmissionAttr
  * <PaymentInfoPageContent paymentinfo={paymentinfoEntity} />
  */
 
+const paymentinfo_temp = {
+                    "amount": 700,
+                    "accountNumber": "1234567890",
+                    "specificSymbol": "AB123",
+                    "constantSymbol": "XYZ987",
+                    "IBAN": "GB29NWBK60161331926819",
+                    "SWIFT": "NWBKGB2L"
+                }
 
 
 const PaymentInfoPageContent = ({paymentinfo}) => {
     return (<>
         <PaymentInfoPageNavbar paymentinfo={paymentinfo} />
-        <PaymentInfoLargeCard className = {styles.payment_info_content}  paymentinfo={paymentinfo}>
-            PaymentInfo {JSON.stringify(paymentinfo)}
-            <br/>IBAN je: {paymentinfo.IBAN}<br/>
-            <PaymentInfoAdmissionAttribute  paymentinfo={paymentinfo} />
+        <PaymentInfoLargeCard paymentinfo={paymentinfo}>
         </PaymentInfoLargeCard>
     </>)
+}
+
+export const PaymentInfoPage = () => {
+    const {id} = useParams()
+    const paymentinfo = {id}
+    return <PaymentInfoPageContent paymentinfo={paymentinfo_temp} />
 }
 
 /**
@@ -104,8 +115,3 @@ const PaymentInfoPageContentLazy = ({paymentinfo}) => {
  *
  * // Navigating to "/paymentinfo/12345" will render the page for the paymentinfo entity with ID 12345.
  */
-export const PaymentInfoPage = () => {
-    const {id} = useParams()
-    const paymentinfo = {id}
-    return <PaymentInfoPageContentLazy paymentinfo={paymentinfo} />
-}

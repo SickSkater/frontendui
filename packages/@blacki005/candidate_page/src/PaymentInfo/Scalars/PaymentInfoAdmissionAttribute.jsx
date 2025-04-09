@@ -26,7 +26,6 @@ export const PaymentInfoAdmissionAttribute = ({paymentinfo}) => {
 
     console.log(JSON.stringify(admission))
 
-    //if (typeof admission === 'undefined') return null
     return (
         <>
             <AdmissionMediumCard admission={admission} />

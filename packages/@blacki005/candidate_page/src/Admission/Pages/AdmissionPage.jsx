@@ -27,13 +27,36 @@ import { AdmissionPageNavbar } from "./AdmissionPageNavbar"
  * 
  * <AdmissionPageContent admission={admissionEntity} />
  */
+
+
+const admission_temp = {
+    "applicationStartDate": "2025-01-01",
+    "applicationLastDate": "2025-01-31",
+    "endDate": "2025-06-30",
+    "conditionDate": "2025-01-10",
+    "paymentDate": "2025-02-01",
+    "examStartDate": "2025-05-01",
+    "examLastDate": "2025-05-15",
+    "studentEntryDate": "2025-02-01",
+    "createdBy": [
+        "123e4567-e89b-12d3-a456-426614174000",
+    ],
+    "program": {
+      "name": "Kybernetická bezpečnost"
+    }
+}
 const AdmissionPageContent = ({admission}) => {
     return (<>
         <AdmissionPageNavbar admission={admission} />
         <AdmissionLargeCard admission={admission}>
-            Admission {JSON.stringify(admission)}
         </AdmissionLargeCard>
     </>)
+}
+
+export const AdmissionPage = () => {
+    const {id} = useParams()
+    const admission = {id}
+    return <AdmissionPageContent admission={admission_temp} />
 }
 
 /**
@@ -58,6 +81,7 @@ const AdmissionPageContent = ({admission}) => {
  *
  * <AdmissionPageContentLazy admission={admissionId} />
  */
+/*
 const AdmissionPageContentLazy = ({admission}) => {
     const { error, loading, entity, fetch } = useAsyncAction(AdmissionReadAsyncAction, admission)
     const [delayer] = useState(() => CreateDelayer())
@@ -78,7 +102,7 @@ const AdmissionPageContentLazy = ({admission}) => {
     return (<>
         {loading && <LoadingSpinner />}
         {error && <ErrorHandler errors={error} />}
-        {entity && <AdmissionPageContent admission={entity}  onChange={handleChange} onBlur={handleBlur} />}
+        {entity && <AdmissionPageContent admission={admission_temp}  onChange={handleChange} onBlur={handleBlur} />}
     </>)
 }
 
@@ -98,8 +122,9 @@ const AdmissionPageContentLazy = ({admission}) => {
  *
  * // Navigating to "/admission/12345" will render the page for the admission entity with ID 12345.
  */
+/*
 export const AdmissionPage = () => {
     const {id} = useParams()
     const admission = {id}
     return <AdmissionPageContentLazy admission={admission} />
-}
+}*/
