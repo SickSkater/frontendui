@@ -19,12 +19,12 @@
  * <UserPaymentinfoAttribute user={userEntity} />
  */
 
-import {PaymentInfoMediumCard} from "../../PaymentInfo";
+import {PaymentInfoMediumCard} from "C:/Users/vojta/OneDrive/Plocha/new_frontendui/frontendui/packages/@blacki005/candidate_page/src/PaymentInfo/Components/PaymentInfoMediumCard"
 
 export const UserPaymentInfoAttribute = ({paymentinfo}) => {
     return (
         <>
-            <PaymentInfoMediumCard paymentinfo = {paymentinfo} />
+            <PaymentInfoMediumCard paymentinfo = {paymentinfo} />   
         </>
     )
 }

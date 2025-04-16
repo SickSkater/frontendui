@@ -19,7 +19,7 @@
  * <UserAdmissionAttribute user={userEntity} />
  */
 
-import { AdmissionMediumContent } from "../../Admission"
+import { AdmissionMediumContent } from "C:/Users/vojta/OneDrive/Plocha/new_frontendui/frontendui/packages/@blacki005/candidate_page/src/Admission/Components/AdmissionMediumContent"
 export const UserAdmissionAttribute = ({admission}) => {
     const Admission = admission
     return (

@@ -27,15 +27,15 @@ import { AdmissionMediumCard } from "./AdmissionMediumCard"
  *   <p>Additional content for the middle column.</p>
  * </AdmissionLargeCard>
  */
-
-
+import { AdmissionPaymentInfosAttribute } from "../Vectors/AdmissionPaymentInfosAttribute"
+import { temp_data } from "../../User"
 export const AdmissionLargeCard = ({admission, children}) => {
-
+console.log(admission)
     return (
         <AdmissionCardCapsule admission={admission} >
             <Row>
                 <LeftColumn>
-                    místo pro buttony pro další srandy
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </LeftColumn>
                 <MiddleColumn>
                 <AdmissionMediumCard admission={admission}/>

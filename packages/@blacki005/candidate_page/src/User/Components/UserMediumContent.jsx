@@ -1,4 +1,3 @@
-import { AdmissionLink } from "../../Admission"
 import { UserButton } from "./UserCUDButton"
 import { UserLink } from "./UserLink"
 
@@ -25,11 +24,6 @@ import { UserLink } from "./UserLink"
  *   <p>Additional information about the entity.</p>
  * </UserMediumContent>
  */
-
-
-import { UserStudentsAttribute } from "../Vectors/UserStudentsAttribute"
-import { temp_data } from "../Pages/UserPage"
-
 export const UserMediumContent = ({user, children}) => {
     return (
         <>
@@ -42,10 +36,8 @@ export const UserMediumContent = ({user, children}) => {
             <br />
             Studuje: {user.study} { user.study == null ? "Prázdné" : user.study}
             <br />
-            Prihlasky:
-            {/* {JSON.stringify(temp_data.studies)} */}
-            <UserStudentsAttribute studies={temp_data.studies}/>
-        </div>     
+
+        </div>        
         </>
     )
 }

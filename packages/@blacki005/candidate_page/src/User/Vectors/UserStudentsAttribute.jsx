@@ -1,5 +1,8 @@
 import { createAsyncGraphQLAction, processVectorAttributeFromGraphQLResult } from "@hrbolek/uoisfrontend-gql-shared"
-import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
+import { CardCapsule, InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
+import { AdmissionLink } from "../../Admission"
+import { EvaluationLink } from "../../Evaluation"
+import { PaymentInfoLink } from "../../PaymentInfo"
 
 /**
  * A component for displaying the `students` attribute of an user entity.
@@ -27,21 +30,25 @@ import { InfiniteScroll } from "@hrbolek/uoisfrontend-shared"
  *
  * <UserStudentsAttribute user={userEntity} />
  */
-import { AdmissionLink } from "../../Admission"
-
 export const UserStudentsAttribute = ({studies}) => {
-
-    // if (typeof students === 'undefined') return null
+    //if (typeof students === 'undefined') return null
     return (
         <>
             {
             studies.map(
                 student => <div id={student.id} key={student.id}>
-                    <AdmissionLink admission={student.payments[0].paymentInfo.admission} /> <br />
-                    {/* {JSON.stringify(student)} */}
+                    <CardCapsule>
+                    Přihláška: &emsp; 
+                    <AdmissionLink admission={student.payments[0].paymentInfo.admission} />
+                    <br/>
+                    Zkouška: &emsp;
+                    <EvaluationLink evaluation={student.evaluations[0]}/>
+                    <br/>
+                    Platba: &emsp;&emsp;
+                    <PaymentInfoLink paymentinfo={student.payments[0].paymentInfo}/>
+                    </CardCapsule>
                 </div>
-            )
-            }
+            )}
         </>
     )
 }
