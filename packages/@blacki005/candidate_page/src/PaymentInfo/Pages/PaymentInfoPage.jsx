@@ -28,16 +28,20 @@ import {PaymentInfoAdmissionAttribute} from "../Scalars/PaymentInfoAdmissionAttr
  * 
  * <PaymentInfoPageContent paymentinfo={paymentinfoEntity} />
  */
+
+import { getDataById, temp_data } from "../../User"
+
 const PaymentInfoPageContent = ({paymentinfo}) => {
     return (<>
         <PaymentInfoPageNavbar paymentinfo={paymentinfo} />
         <PaymentInfoLargeCard paymentinfo={paymentinfo}>
-            PaymentInfo {JSON.stringify(paymentinfo)}
-        </PaymentInfoLargeCard>
-        <PaymentInfoLargeCard paymentinfo={paymentinfo}>
-            <PaymentInfoAdmissionAttribute paymentinfo={paymentinfo} />
         </PaymentInfoLargeCard>
     </>)
+}
+
+export const PaymentInfoPage = () => {
+    const {id} = useParams()
+    return <PaymentInfoPageContent paymentinfo={getDataById(id, [temp_data.studies[0].payments[0].paymentInfo.admission.paymentInfo,temp_data.studies[1].payments[0].paymentInfo.admission.paymentInfo ])} />
 }
 
 /**
@@ -102,8 +106,3 @@ const PaymentInfoPageContentLazy = ({paymentinfo}) => {
  *
  * // Navigating to "/paymentinfo/12345" will render the page for the paymentinfo entity with ID 12345.
  */
-export const PaymentInfoPage = () => {
-    const {id} = useParams()
-    const paymentinfo = {id}
-    return <PaymentInfoPageContentLazy paymentinfo={paymentinfo} />
-}

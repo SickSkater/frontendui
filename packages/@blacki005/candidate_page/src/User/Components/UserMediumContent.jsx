@@ -27,12 +27,17 @@ import { UserLink } from "./UserLink"
 export const UserMediumContent = ({user, children}) => {
     return (
         <>
-            {/* UserMediumContent <br /> */}
-            {/* {JSON.stringify(user)} */}
-            {/* {children} */}
-            {user.name} {user.surname}
-            <UserLink user={user}/>
-            
+        <div>
+            Jméno: {user.name}
+            <br />
+            Příjmení: {user.surname}
+            <br />
+            ID: {user.id}
+            <br />
+            Studuje: {user.study} { user.study == null ? "Prázdné" : user.study}
+            <br />
+
+        </div>        
         </>
     )
 }

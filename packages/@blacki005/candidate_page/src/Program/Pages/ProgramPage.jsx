@@ -6,7 +6,6 @@ import { useAsyncAction } from "@hrbolek/uoisfrontend-gql-shared"
 import { ProgramLargeCard } from "../Components"
 import { ProgramReadAsyncAction } from "../Queries"
 import { ProgramPageNavbar } from "./ProgramPageNavbar"
-import { ProgramSubjectsAttribute } from "../Vectors/ProgramSubjectsAttribute"
 
 /**
  * A page content component for displaying detailed information about an program entity.

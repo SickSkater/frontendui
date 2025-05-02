@@ -29,7 +29,7 @@ import { PaymentInfoLink } from "./PaymentInfoLink"
  *   <Button variant="primary">Click Me</Button>
  * </PaymentInfoCardCapsule>
  */
-export const PaymentInfoCardCapsule = ({paymentinfo, children, title=<><PersonFill /> <PaymentInfoLink paymentinfo={paymentinfo} /></>}) => {
+export const PaymentInfoCardCapsule = ({paymentinfo, children, title="Platební údaje"}) => {
     return (
         <CardCapsule title={title}>
             {children}

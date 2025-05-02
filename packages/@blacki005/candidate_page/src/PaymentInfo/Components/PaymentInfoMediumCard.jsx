@@ -28,12 +28,12 @@ import { PaymentInfoMediumContent } from "./PaymentInfoMediumContent"
  *   <p>Additional details or actions for the entity.</p>
  * </PaymentInfoMediumCard>
  */
-export const PaymentInfoMediumCard = ({paymentinfo, children}) => {
+
+  
+export const PaymentInfoMediumCard = ({paymentinfo}) => {
     return (
-        <PaymentInfoCardCapsule title={<><PersonFill /> <PaymentInfoLink paymentinfo={paymentinfo} /></>}>
-            <PaymentInfoMediumContent paymentinfo={paymentinfo}>
-                {children}
-            </PaymentInfoMediumContent>
+        <PaymentInfoCardCapsule title="Platební údaje">
+            <PaymentInfoMediumContent paymentinfo={paymentinfo}/>
         </PaymentInfoCardCapsule>
     )
 }

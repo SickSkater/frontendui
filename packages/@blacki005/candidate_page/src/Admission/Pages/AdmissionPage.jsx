@@ -27,13 +27,23 @@ import { AdmissionPageNavbar } from "./AdmissionPageNavbar"
  * 
  * <AdmissionPageContent admission={admissionEntity} />
  */
+
+import { getDataById, temp_data } from "../../User"
+
+
+
 const AdmissionPageContent = ({admission}) => {
     return (<>
         <AdmissionPageNavbar admission={admission} />
         <AdmissionLargeCard admission={admission}>
-            Admission {JSON.stringify(admission)}
         </AdmissionLargeCard>
     </>)
+}
+
+export const AdmissionPage = () => {
+    const {id} = useParams()
+    //console.log(getDataById(id, [temp_data.studies[0].payments[0].paymentInfo.admission, temp_data.studies[1].payments[0].paymentInfo.admission]))
+    return <AdmissionPageContent admission={getDataById(id, [temp_data.studies[0].payments[0].paymentInfo.admission, temp_data.studies[1].payments[0].paymentInfo.admission])} />
 }
 
 /**
@@ -58,6 +68,7 @@ const AdmissionPageContent = ({admission}) => {
  *
  * <AdmissionPageContentLazy admission={admissionId} />
  */
+/*
 const AdmissionPageContentLazy = ({admission}) => {
     const { error, loading, entity, fetch } = useAsyncAction(AdmissionReadAsyncAction, admission)
     const [delayer] = useState(() => CreateDelayer())
@@ -78,7 +89,7 @@ const AdmissionPageContentLazy = ({admission}) => {
     return (<>
         {loading && <LoadingSpinner />}
         {error && <ErrorHandler errors={error} />}
-        {entity && <AdmissionPageContent admission={entity}  onChange={handleChange} onBlur={handleBlur} />}
+        {entity && <AdmissionPageContent admission={admission_temp}  onChange={handleChange} onBlur={handleBlur} />}
     </>)
 }
 
@@ -98,8 +109,9 @@ const AdmissionPageContentLazy = ({admission}) => {
  *
  * // Navigating to "/admission/12345" will render the page for the admission entity with ID 12345.
  */
+/*
 export const AdmissionPage = () => {
     const {id} = useParams()
     const admission = {id}
     return <AdmissionPageContentLazy admission={admission} />
-}
+}*/
